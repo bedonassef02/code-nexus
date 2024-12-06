@@ -2,9 +2,12 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$controller = new \App\DRY\Before\User\Controller();
-//$controller = new \App\DRY\After\User\Controller();
+//$cart = new \App\DRY\Before\Cart();
+$cart = new \App\DRY\After\Cart();
 
-$controller->register(['email' => '2F2dD@example.com', 'password' => 'password']);
-$controller->login(['email' => '2F2dD@example.com', 'password' => 'password']);
-$controller->login(['email' => '2F2dD@example.com', 'password' => 'password1']);
+$items = [
+    ['name' => 'Laptop', 'price' => 1000, 'quantity' => 2, 'category' => 'electronics'],
+    ['name' => 'Chair', 'price' => 200, 'quantity' => 5, 'category' => 'furniture'],
+];
+
+echo "Total: " . $cart->calculateTotal($items) . PHP_EOL;
