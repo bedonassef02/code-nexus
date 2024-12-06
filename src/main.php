@@ -2,12 +2,11 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-//$cart = new \App\DRY\Before\Cart();
-$cart = new \App\DRY\After\Cart();
+//$manager = new \App\DRY\Before\User\Manager();
+$manager = new \App\DRY\After\User\Manager();
 
-$items = [
-    ['name' => 'Laptop', 'price' => 1000, 'quantity' => 2, 'category' => 'electronics'],
-    ['name' => 'Chair', 'price' => 200, 'quantity' => 5, 'category' => 'furniture'],
-];
+$user = ['firstName' => 'John', 'lastName' => 'Doe', 'email' => 'John.Doe@Example.com'];
+$admin = ['firstName' => 'Admin', 'lastName' => 'User', 'email' => 'Admin.User@Example.com'];
 
-echo "Total: " . $cart->calculateTotal($items) . PHP_EOL;
+echo $manager->getUserProfile($user);
+echo $manager->getAdminProfile($admin);
