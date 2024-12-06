@@ -1,0 +1,17 @@
+{
+    "name": "bedo/code-nexus",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bedo",
+            "email": "bedonassef71@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^7.1"
+    }
+}
