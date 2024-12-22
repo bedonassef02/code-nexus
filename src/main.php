@@ -2,10 +2,13 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-//$auth = new \App\DRY\Before\Auth;
-$auth = new \App\DRY\After\Auth;
+//$register = new \App\KISS\Before\Register;
+$register = new \App\KISS\After\Register;
 
-$userLogin = $auth->login('H8lq0@example.com', 'password');
-$userRegister = $auth->register('H8lq0@example.com', 'password');
+$user = $register([
+    'username' => 'username',
+    'password' => 'password1',
+    'email' => '5QOoU@example.com']
+);
 
-dd($userLogin, $userRegister);
+dd($user);
