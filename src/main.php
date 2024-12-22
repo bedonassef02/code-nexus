@@ -2,13 +2,14 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-//$register = new \App\KISS\Before\Register;
-$register = new \App\KISS\After\Register;
+//$order = new \App\KISS\Before\Order;
+$order = new \App\KISS\After\Order;
 
-$user = $register([
-    'username' => 'username',
-    'password' => 'password1',
-    'email' => '5QOoU@example.com']
+echo $order->calculatePrice(
+    [
+        ['price' => 10, 'quantity' => 2],
+        ['price' => 20, 'quantity' => 1],
+    ],
+    ['country' => 'US'],
+    'DISCOUNT10'
 );
-
-dd($user);
